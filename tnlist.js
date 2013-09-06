@@ -1,0 +1,27 @@
+tnlist ="\
+Anton,\
+Berta,\
+Cäsar,\
+Dora,\
+Emil,\
+Friedrich,\
+Gustav,\
+Heinrich,\
+Ida,\
+Julius,\
+Kaufmann,\
+Ludwig,\
+Martha,\
+Nordpol,\
+Otto,\
+Paula,\
+Quelle,\
+Richard,\
+Samuel,\
+Theodor,\
+Ulrich,\
+Victor,\
+Wilhelm,\
+Xanthippe,\
+Ypsilon,\
+Zacharias"; 

@@ -1,0 +1,21 @@
+/* stack all grids below 40em (640px) */
+@media all and (max-width: 50em) {
+	.tngridbp .ui-block-a, 
+	.tngridbp .ui-block-b, 
+	.tngridbp .ui-block-c,
+	.tngridbp .ui-block-d,
+	.tngridbp .ui-block-e { 
+		width: 100%; 
+		float:none; 
+	}
+}
+
+body, .ui-content, #wahl, #tngrid {
+	height: 100%;
+}
+
+.tngridbp {
+	height: 12%;
+	text-align: center;
+	font-size: 20px;
+}

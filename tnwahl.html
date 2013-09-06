@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+ 
+<html lang="de">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Teilnehmerwahl</title>
+  
+	<script src="jquery-1.10.2.min.js"></script>
+   <script src="jquery.mobile/jquery.mobile-1.3.2.js"></script>
+   <link rel="stylesheet" href="jquery.mobile/jquery.mobile.css" />
+   <link rel="stylesheet" href="style.css" />
+ 	<script src="tnwahl.js"></script>
+	<script src="tnlist.js"></script>
+</head>
+<body>
+	<div data-role="page" id="wahl">
+		<div data-role="header">
+			<h1>Teilnehmerwahl</h1>
+		</div> 
+
+		<div data-role="content" class="ui-content" role="main"> 
+			
+			<div class="ui-grid-c ui-responsive" id="tngrid"></div>
+
+		</div> <!-- content -->
+		
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#dataedit" data-icon="gear" >Bearbeiten</a></li>
+				   <li><a href="#" data-icon="info">Infos</a></li>				
+				</ul>
+			</div>
+		</div> 	
+			
+	</div><!-- page -->
+
+	<div data-role="page" id="dataedit" data-title="Daten bearbeiten"
+	data-add-back-btn="true" data-back-btn-text="Zurück">
+		<div data-role="header">
+			<h1>Teilnehmer</h1>
+		</div>
+		
+		<div data-role="content">
+			<div data-role="fieldcontain">
+	        	<fieldset data-role="controlgroup" id="tnliste">
+					<legend><h3>aktiv/inaktiv:</h3></legend>
+				</fieldset>
+			</div>			
+			
+			<div data-role="fieldcontain">
+				<label for="neu">Neuer Eintrag:&nbsp;</label>
+	    		<input type="text" name="neu" id="neu" value=""  />
+    		</div>
+    		
+			<button id="export">Export</button>
+		</div> 
+		
+		<div data-role="footer">
+			<h4>(Timo Ehrlenbach)</h4>
+		</div> 		
+	
+	</div>
+
+</body>
+</html>
