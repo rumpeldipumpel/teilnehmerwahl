@@ -22,8 +22,10 @@
 
 		<div data-role="content" class="ui-content" role="main"> 
 			
-			<div class="ui-grid-c ui-responsive" id="tngrid"></div>
-
+	<!--		<div class="ui-grid-c ui-responsive" id="tngrid"></div> -->
+			
+			<a href="#rndorder" data-role="button">Zufällige Reihenfolge</a>
+			
 		</div> <!-- content -->
 		
 		<div data-role="footer" data-position="fixed">
@@ -64,5 +66,17 @@
 	
 	</div>
 
+	<div data-role="page" id="rndorder" data-title="Zufällige Reihenfolge"
+	data-add-back-btn="true" data-back-btn-text="Zurück">
+		<div data-role="header">
+			<h1>Nächster Teilnehmer:</h1>
+		</div>
+		
+		<div data-role="content">
+			<div id='bigbuttoncont'>
+				<button id="tnname">Klick mich!</button>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

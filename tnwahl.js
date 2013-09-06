@@ -1,10 +1,16 @@
 $(function() {
 
+		var refreshPage = function (page) {
+			page.trigger('pagecreate');
+			//page.listview('refresh');
+			console.log('refreshed');
+			}
+
 		console.log(tnlist);
 		tnwahl = new TnWahlC( );
 		tnwahl.set(tnlist);
 		
-		tnwahl.print();
+		/*tnwahl.print();
 		for (i=0; i<tnwahl.length(); i++) {
 			$('#tnliste').append( tnwahl.getTnListElem(i) );
 		}
@@ -23,6 +29,8 @@ $(function() {
 		}
 
 		$('#tngrid').append( genUiGridDivs( tnwahl ) );
+		*/
+
 		
 
 		$("input[type='checkbox']").checkboxradio();
@@ -45,7 +53,7 @@ $(function() {
 			tnwahl.add( newval );
 			lastidx = tnwahl.length()-1;
 
-			$('#tnliste').append( 
+			$('#tnliste .ui-controlgroup-controls').append( 
 				tnwahl.getTnListElem( lastidx )
 			 );
 			$("input[type='checkbox']").checkboxradio();
@@ -53,6 +61,7 @@ $(function() {
 			//add checkbox change handler
 			$('#checkbox-'+ lastidx ).change( function() {checkboxChangeFn(this);});
 
+			refreshPage($('#dataedit'));
 		});
 
 		// add change event handler to checkboxes
@@ -60,9 +69,63 @@ $(function() {
 		$('#export').click( function(e) {
 				e.preventDefault();
 				ostr = tnwahl.genExportStr();
-				window.open("data:application/download;charset=utf-8," + escape(ostr));
+				window.open("data:text/javascript;charset=utf-8," + escape(ostr));
 		});
+		
+		//Löschen von Elementen?
+		
+		var rndidxarray = range(0, tnwahl.length());
+		console.log('rndidxarray:'+rndidxarray);
+		rndidxarray = shuffle(rndidxarray);
+		var curridx = -1;		
+		
+		$('#tnname').click( function(e) {
+			
+			var maxidx = tnwahl.length() -1;
+			
+			//var idx = getRandomInt(0,tnwahl.length() -1 );
+			curridx += 1;
+			if( curridx == maxidx ) { console.log('letzter curridx:'+curridx);}
+			
+			curridx = curridx % tnwahl.length();
+			if(curridx == 0) {
+				console.log('mische neu'); 
+				rndidxarray = shuffle(rndidxarray);
+				}
+			
+			var idx = rndidxarray[ curridx ];			
+			
+			var tnname = tnwahl.getName( idx );
+			console.log('rndarraycurridx:'+curridx+'  tnidx='
+			+idx+' tnname:'+tnname+' maxidx:'+maxidx);
+			
+			$('#tnname').text( tnname ).button('refresh');
+			
+			});
 });
+
+function range(start, count) {
+    if(arguments.length == 1) {
+        count = start;
+        start = 0;
+    }
+
+    var foo = [];
+    for (var i = 0; i < count; i++) {
+        foo.push(start + i);
+    }
+    return foo;
+}
+
+function shuffle(o){ //v1.0
+    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    return o;
+};
+function getRandomInt (min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
 
 var tnlist = '';
 var tnwahl = 0;
