@@ -10,11 +10,11 @@ $(function() {
 		tnwahl = new TnWahlC( );
 		tnwahl.set(tnlist);
 		
-		/*tnwahl.print();
+		tnwahl.print();
 		for (i=0; i<tnwahl.length(); i++) {
 			$('#tnliste').append( tnwahl.getTnListElem(i) );
 		}
-
+/*
 		var genUiGridDivs = function ( obj ) {
 			chars = 'abcde'.split('');
 			gstr = '';
@@ -172,8 +172,21 @@ var TnWahlC  = function( ) {
 			if ( _tnlist[idx].isActive() ) {
 				checked = 'checked="checked" ';
 			}
-			str = '<input type="checkbox" name="checkbox-'+idx+'" id="checkbox-'+idx+'" class="tncheckbox" '+checked+'/>';
-			str+= ' <label for="checkbox-'+idx+'">'+_tnlist[idx].getName()+'</label>';
+			str = '<input type="checkbox" name="checkbox-'+idx;
+			str +='" id="checkbox-'+idx+'" class="tncheckbox" '+checked+'/>';
+			str+= ' <label for="checkbox-'+idx+'">';
+			str+= _tnlist[idx].getName();
+			
+	/*		str+= '<div class="tnlistcgspan" data-role="controlgroup" data-type="horizontal">';
+			str+= '<a href="#" data-role="button" data-icon="plus" ';
+			str += 'data-iconpos="left" data-mini="true">Bearbeiten</a>';
+			str+= '<a href="#" data-role="button" data-icon="delete" ';
+			str += 'data-iconpos="left" data-mini="true">Löschen</a>';
+			str += '</div>';*/
+			//button data-mini="true" data-inline="true" data-icon="delete"/>';
+			
+			str+= '</label>';
+			
 		//	console.log('gen: '+str);
 			return $(str);
 		},

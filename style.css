@@ -41,3 +41,7 @@ body, .ui-content, #wahl, #tngrid {
 	height: 3em;	
 	font-size: 1.5em;
 	}
+	
+.tnlistcgspan {
+	position: relative;
+}
