@@ -12,7 +12,13 @@ $(function() {
 		
 		tnwahl.print();
 		for (i=0; i<tnwahl.length(); i++) {
-			$('#tnliste').append( tnwahl.getTnListElem(i) );
+			
+			var tnname = tnwahl.getName( i );
+			tntr_html = ich.tntr( {idx:i, tn_name: tnname } );		
+			$('#tn_table').append( tntr_html );
+			//$('#wahl').trigger('pagecreate');			
+				
+			//$('#tn_table').append( tnwahl.getTnListElem(i) );
 		}
 /*
 		var genUiGridDivs = function ( obj ) {

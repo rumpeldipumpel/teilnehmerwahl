@@ -8,6 +8,7 @@
 	<title>Teilnehmerwahl</title>
   
 	<script src="jquery-1.10.2.min.js"></script>
+	<script src="ICanHaz.js"></script>
    <script src="jquery.mobile/jquery.mobile-1.3.2.js"></script>
    <link rel="stylesheet" href="jquery.mobile/jquery.mobile.css" />
    <link rel="stylesheet" href="style.css" />
@@ -46,11 +47,14 @@
 		</div>
 		
 		<div data-role="content">
-			<div data-role="fieldcontain">
+	<!--		<div data-role="fieldcontain">
 	        	<fieldset data-role="controlgroup" id="tnliste">
 					<legend><h3>aktiv/inaktiv:</h3></legend>
 				</fieldset>
-			</div>			
+			</div>		-->	
+			<table id='tn_table' data-role="none">		
+				<tr><th>Aktiv<th>Name<th>Löschen</th>
+			</table>	
 			
 			<div data-role="fieldcontain">
 				<label for="neu">Neuer Eintrag:&nbsp;</label>
@@ -79,4 +83,23 @@
 		</div>
 	</div>
 </body>
+	<script id="tntr" type="text/html">
+		<tr>
+			<td>
+				<a href="#" data-role="button" data-icon="check" 
+				data-iconpos="notext" data-theme="b" 
+				data-inline="true">Aktiv</a>		
+			</td>
+			<td>
+				<input type="text" name="enter-{{idx}}" 
+				id="enter-{{idx}}" value="{{tn_name}}"/>	
+			</td>
+			<td>
+				<a href="#" data-role="button" data-icon="delete" 
+				data-iconpos="notext" data-theme="c" 
+				data-inline="true">Löschen</a>		
+			</td>
+		</tr>
+	</script>
+
 </html>
