@@ -1,4 +1,4 @@
-tnlist ="\
+tnlistdata ="\
 Anton,\
 Berta,\
 Cäsar,\
